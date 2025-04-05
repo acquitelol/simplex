@@ -53,35 +53,47 @@ export function Actions() {
   };
 
   return (
-    !editing && (
-      <div style={styles.buttons}>
-        <button style={styles.button} onClick={solve}>
-          Solve
-        </button>
-        <button style={styles.button} onClick={autoPivotWithState}>
-          Pivot once automatically
-        </button>
-        <button
-          onClick={unpivot}
-          disabled={!prevStates.size}
-          style={merge((s) => [
-            s.button,
-            { opacity: prevStates.size ? "initial" : 0.5 },
-          ])}
-        >
-          Unpivot
-        </button>
-        <button
-          onClick={unsolve}
-          disabled={!prevStates.size}
-          style={merge((s) => [
-            s.button,
-            { opacity: prevStates.size ? "initial" : 0.5 },
-          ])}
-        >
-          Unsolve
-        </button>
-      </div>
-    )
+    <div style={styles.buttons}>
+      <button
+        onClick={solve}
+        disabled={editing}
+        style={merge((s) => [
+          s.button,
+          { opacity: !editing ? "initial" : 0.5 },
+        ])}
+      >
+        Solve
+      </button>
+      <button
+        onClick={autoPivotWithState}
+        disabled={editing}
+        style={merge((s) => [
+          s.button,
+          { opacity: !editing ? "initial" : 0.5 },
+        ])}
+      >
+        Pivot once automatically
+      </button>
+      <button
+        onClick={unpivot}
+        disabled={!prevStates.size || editing}
+        style={merge((s) => [
+          s.button,
+          { opacity: prevStates.size && !editing ? "initial" : 0.5 },
+        ])}
+      >
+        Unpivot
+      </button>
+      <button
+        onClick={unsolve}
+        disabled={!prevStates.size || editing}
+        style={merge((s) => [
+          s.button,
+          { opacity: prevStates.size && !editing ? "initial" : 0.5 },
+        ])}
+      >
+        Unsolve
+      </button>
+    </div>
   );
 }
