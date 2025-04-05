@@ -19,28 +19,29 @@ To keep it short - this has everything that [this](https://www.math.cmu.edu/~bke
 
 ### ♡ **Why does this exist?**
 
-I came across [this](https://www.math.cmu.edu/~bkell/pivot.html) recently, because I wanted to check my working was correct when solving `Simplex Tableau` questions.
+I came across [this](https://www.math.cmu.edu/~bkell/pivot.html) recently, as I need a basic solver for `Simplex Tableau` questions.
 
 It's simple and allows for manual pivoting, which is exactly what I needed - except there were some issues:
 
-- If I changed the dimensions of the tableau, all of the values I already had in it were cleared.
-- If I reload the page, all the values I set were also cleared.
-- If I pivot incorrectly, there's no `undo` button.
-- There's no button to automatically pivot once or to start again from the initial tableau.
+- If I changed the dimensions of the tableau or reloaded the page, all of the values were cleared.
+- If I pivot incorrectly, there's no `undo` or `unpivot` button. I have to completely refill the tableau.
+- There's no button to automatically pivot once or to go back to the initial tableau.
+
+Therefore, I decided to make my own implementation. This is "inspired" by the solver I referenced above, but no source code was used from it.
 
 ### ♡ **Where do I find this?**
 
-You can find a deployed version of the project [here](https://acquitelol.github.io/simplex/).
+- You can find a deployed version of the project [here](https://acquitelol.github.io/simplex/).
 
 ### ♡ **How do I run locally?**
 
-- Clone it to your machine
+- Clone it to your machine:
 
 ```console
 $ git clone git@github.com:acquitelol/simplex.git
 ```
 
-- Install dependencies and deploy
+- Install dependencies and deploy:
 
 ```console
 $ cd simplex
