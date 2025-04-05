@@ -13,7 +13,7 @@ export const { merge, styles } = createStyleSheet({
   },
 
   matrix: {
-    overflow: "scroll",
+    overflow: "auto",
     whiteSpace: "nowrap",
     width: "fit-content",
   },
