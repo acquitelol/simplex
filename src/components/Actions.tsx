@@ -72,7 +72,7 @@ export function Actions() {
           { opacity: !editing ? "initial" : 0.5 },
         ])}
       >
-        Pivot once automatically
+        Pivot once
       </button>
       <button
         onClick={unpivot}
@@ -82,7 +82,7 @@ export function Actions() {
           { opacity: prevStates.size && !editing ? "initial" : 0.5 },
         ])}
       >
-        Unpivot
+        Unpivot once
       </button>
       <button
         onClick={unsolve}
