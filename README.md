@@ -2,16 +2,11 @@
 
 ### A simple implementation of a **Simplex Tableau** solver
 
-### ♡ **Why does this exist?**
+### ✩ _If you like this project, consider giving it a star!_ ✩
 
-I came across [this](https://www.math.cmu.edu/~bkell/pivot.html) recently, wanting to check my working was correct when solving questions involving the simplex algorithm.
+### ♡ **Where do I find this?**
 
-It's simple and allows for manual pivoting, which is exactly what I needed - except there were some issues:
-
-- If I changed the dimensions of the tableau, all of the values I already had in it were cleared.
-- If I reload the page, all the values I set were also cleared.
-- If I pivot incorrectly, there's no `undo` button.
-- There's no button to automatically pivot once or to start again from the initial tableau.
+You can find it [here](https://acquitelol.github.io/simplex/).
 
 ### ♡ **What features does this have?**
 
@@ -26,9 +21,16 @@ To keep it short - everything the one above doesn't!
 - Solving and unsolving the whole Tableau
 - Persistent state through `localStorage` (everything is saved)
 
-### ♡ **Where do I find this?**
+### ♡ **Why does this exist?**
 
-- https://acquitelol.github.io/simplex/
+I came across [this](https://www.math.cmu.edu/~bkell/pivot.html) recently, because I wanted to check my working was correct when solving `Simplex Tableau` questions.
+
+It's simple and allows for manual pivoting, which is exactly what I needed - except there were some issues:
+
+- If I changed the dimensions of the tableau, all of the values I already had in it were cleared.
+- If I reload the page, all the values I set were also cleared.
+- If I pivot incorrectly, there's no `undo` button.
+- There's no button to automatically pivot once or to start again from the initial tableau.
 
 ### ♡ **Licensing**
 
