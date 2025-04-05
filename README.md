@@ -22,7 +22,7 @@ To keep it short - this has everything that [this](https://www.math.cmu.edu/~bke
 
 ### ♡ **Why does this exist?**
 
-I came across [this](https://www.math.cmu.edu/~bkell/pivot.html) recently, as I need a basic solver for `Simplex Tableau` questions.
+I came across [this](https://www.math.cmu.edu/~bkell/pivot.html) recently, as I needed a basic solver for `Simplex Tableau` questions.
 
 It's simple and allows for manual pivoting, which is exactly what I needed - except there were some issues:
 
