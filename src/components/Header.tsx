@@ -93,7 +93,7 @@ export function Header() {
         <button
           style={styles.button}
           onClick={toggleEditing}
-        >{`Edit (${editing ? "✗" : "✓"})`}</button>
+        >{`Edit (${editing ? "✓" : "✗"})`}</button>
         <button style={styles.button} onClick={changeDimensions}>
           Update dimensions
         </button>
