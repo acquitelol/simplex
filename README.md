@@ -1,20 +1,20 @@
 # ˚୨୧⋆ Simplex ｡˚ ⋆
 
-### A simple implementation of a **Simplex Tableau** solver
+### A simple implementation of a **[Simplex Tableau](https://en.wikipedia.org/wiki/Simplex_algorithm)** solver
 
 ### ✩ _If you like this project, consider giving it a star!_ ✩
 
 ### ♡ **What features does this have?**
 
-To keep it short - everything the one above doesn't!
+To keep it short - this has everything that [this](https://www.math.cmu.edu/~bkell/pivot.html) doesn't have!
 
 - Editable matrix at any time by clicking the "Edit" button
-- Resizable matrix which persists existing values
-- A (seperate) `clear` button to clean the matrix
+- Resizable matrix which persists existing values when resized
+- A (seperate) `clear` button to clear the entire matrix
 - Manual pivoting by clicking a cell (0-cells can't be pivoted)
-- Previous pivot state (you can `unpivot`!)
+- Previous pivot states (you can `unpivot` until the initial tableau!)
 - Automatic pivoting (a single time, useful for checking working)
-- Solving and unsolving the whole Tableau
+- Solving and unsolving the whole Tableau in a single click
 - Persistent state through `localStorage` (everything is saved)
 
 ### ♡ **Why does this exist?**
@@ -40,21 +40,11 @@ You can find a deployed version of the project [here](https://acquitelol.github.
 $ git clone git@github.com:acquitelol/simplex.git
 ```
 
-- Change into the directory
+- Install dependencies and deploy
 
 ```console
 $ cd simplex
-```
-
-- Install dependencies
-
-```console
 $ pnpm i
-```
-
-- Deploy locally
-
-```console
 $ pnpm dev
 ```
 

@@ -15,10 +15,22 @@ export const { merge, styles } = createStyleSheet({
   matrix: {
     overflow: "scroll",
     whiteSpace: "nowrap",
+    width: "fit-content",
   },
 
   button: {
-    marginRight: "0.2em",
+    marginRight: "0.4em",
+  },
+
+  label: {
+    width: "5em",
+  },
+
+  field: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: "0.4em",
   },
 
   headerButtons: {

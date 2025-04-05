@@ -59,34 +59,36 @@ export function Header() {
   return (
     <>
       <div
-        style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
       >
-        <label htmlFor="rows" style={{ marginRight: "10px" }}>
-          Rows
-        </label>
-        <input
-          id="rows"
-          onChange={(e) => setRows(Number(e.target.value))}
-          value={rows || ""}
-          type="number"
-          style={{ width: "100px" }} // Set a fixed width for alignment
-        />
+        <div style={styles.field}>
+          <label htmlFor="rows" style={styles.label}>
+            Rows
+          </label>
+          <input
+            id="rows"
+            onChange={(e) => setRows(Number(e.target.value))}
+            value={rows || ""}
+            type="number"
+          />
+        </div>
+
+        <div style={styles.field}>
+          <label htmlFor="cols" style={styles.label}>
+            Columns
+          </label>
+          <input
+            id="cols"
+            onChange={(e) => setCols(Number(e.target.value))}
+            value={cols || ""}
+            type="number"
+          />
+        </div>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <label htmlFor="cols" style={{ marginRight: "10px" }}>
-          Cols
-        </label>
-        <input
-          id="cols"
-          onChange={(e) => setCols(Number(e.target.value))}
-          value={cols || ""}
-          type="number"
-          style={{ width: "100px" }} // Set a fixed width for alignment
-        />
-      </div>
-
-      <br />
       <br />
 
       <div style={styles.headerButtons}>

@@ -1,4 +1,3 @@
-/** eslint-disable react-hooks/exhaustive-deps */
 import { Context, createContext, useState } from "react";
 import { useStorageValue } from "./lib/useStorageValue";
 import { Header } from "./components/Header";
@@ -60,7 +59,7 @@ function App() {
         prevStates,
       }}
     >
-      <h1>Simplex Tableau Solver</h1>
+      <h1>Simplex Solver</h1>
       <Header />
       <br />
       <br />
