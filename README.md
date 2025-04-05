@@ -1,54 +1,39 @@
-# React + TypeScript + Vite
+# ˚୨୧⋆ Simplex ｡˚ ⋆
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### A simple implementation of a **Simplex Tableau** solver
 
-Currently, two official plugins are available:
+### ♡ **Why does this exist?**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I came across [this](https://www.math.cmu.edu/~bkell/pivot.html) recently, wanting to check my working was correct when solving questions involving the simplex algorithm.
 
-## Expanding the ESLint configuration
+It's simple and allows for manual pivoting, which is exactly what I needed - except there were some issues:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- If I changed the dimensions of the tableau, all of the values I already had in it were cleared.
+- If I reload the page, all the values I set were also cleared.
+- If I pivot incorrectly, there's no `undo` button.
+- There's no button to automatically pivot once or to start again from the initial tableau.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### ♡ **What features does this have?**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+To keep it short - everything the one above doesn't!
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Editable matrix at any time by clicking the "Edit" button
+- Resizable matrix which persists existing values
+- A (seperate) `clear` button to clean the matrix
+- Manual pivoting by clicking a cell (0-cells can't be pivoted)
+- Previous pivot state (you can `unpivot`!)
+- Automatic pivoting (a single time, useful for checking working)
+- Solving and unsolving the whole Tableau
+- Persistent state through `localStorage` (everything is saved)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### ♡ **Where do I find this?**
+
+- https://acquitelol.github.io/simplex/
+
+### ♡ **Licensing**
+
+- Copyright © 2025 Rosie ([acquitelol](https://github.com/acquitelol))
+
+<hr />
+
+<a href="#top">⇡ Back to top️!</a>
