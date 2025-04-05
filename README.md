@@ -1,4 +1,4 @@
-# ˚୨୧⋆ Simplex ｡˚ ⋆
+# ˚୨୧⋆ Simplex Solver ｡˚ ⋆
 
 ### A simple implementation of a **[Simplex Tableau](https://en.wikipedia.org/wiki/Simplex_algorithm)** solver
 
