@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { SimplexContext } from "../lib/simpleContext";
 import { pivot } from "../lib/simplex";
 import { merge } from "../lib/styles";
@@ -27,6 +27,8 @@ export function Cell({
     setPrevStates((prev) => setWithDedupe([...prev, matrix], deepEqual));
     setMatrix(newMatrix);
   };
+
+  const safeValue = useMemo(() => value || 0, [value]);
 
   return editing ? (
     <input
@@ -59,7 +61,7 @@ export function Cell({
       disabled={(value || 0) == 0}
       onClick={() => pivotWithState(row, col)}
     >
-      {(value || 0).toFixed(3)}
+      {Math.floor(safeValue) == safeValue ? safeValue : safeValue.toFixed(3)}
     </button>
   );
 }
