@@ -106,7 +106,7 @@ export function Header() {
           onClick={clear}
           title="Clear the entire tableau, essentially filling it with zeroes"
         >
-          Clear matrix
+          Clear tableau
         </button>
       </div>
     </>
