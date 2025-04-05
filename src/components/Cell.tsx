@@ -1,5 +1,5 @@
 import { PropsWithChildren, useContext, useMemo } from "react";
-import { SimplexContext } from "../lib/simplexContext";
+import { SimplexContext } from "../lib/simplex";
 import { pivot } from "../lib/simplex";
 import { merge } from "../lib/styles";
 import { deepEqual, setWithDedupe } from "../lib/util";

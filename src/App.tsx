@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Actions } from "./components/Actions";
 import { Header } from "./components/Header";
 import { Matrix } from "./components/Matrix";
-import { SimplexContext } from "./lib/simplexContext";
+import { SimplexContext } from "./lib/simplex";
 import { useStorageValue } from "./lib/useStorageValue";
 import { Footer } from "./components/Footer";
 import { styles } from "./lib/styles";

@@ -1,3 +1,10 @@
+import { createContext } from "react";
+
+export const SimplexContext = createContext({} as SimplexContextType);
+
+export const isOptimal = (matrix: number[][]) =>
+  matrix[0].slice(0, matrix[0].length - 1).every((x) => x >= 0);
+
 export function pivot(
   matrix: number[][],
   row: number,
@@ -37,6 +44,3 @@ export function autoPivot(matrix: number[][], rows: number, cols: number) {
 
   return pivot(matrix, r + 1, c, rows);
 }
-
-export const isOptimal = (matrix: number[][]) =>
-  matrix[0].slice(0, matrix[0].length - 1).every((x) => x >= 0);

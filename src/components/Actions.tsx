@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SimplexContext } from "../lib/simplexContext";
+import { SimplexContext } from "../lib/simplex";
 import { autoPivot, isOptimal } from "../lib/simplex";
 import { merge, styles } from "../lib/styles";
 import { deepEqual, setWithDedupe } from "../lib/util";

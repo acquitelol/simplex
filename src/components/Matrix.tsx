@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { styles } from "../lib/styles";
 import { Cell, PlainCell } from "./Cell";
-import { SimplexContext } from "../lib/simplexContext";
+import { SimplexContext } from "../lib/simplex";
 
 export function Matrix() {
   const {
