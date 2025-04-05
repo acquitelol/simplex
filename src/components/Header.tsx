@@ -58,12 +58,7 @@ export function Header() {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <div style={styles.headerFields}>
         <div style={styles.field}>
           <label htmlFor="rows" style={styles.label}>
             Rows
@@ -88,8 +83,6 @@ export function Header() {
           />
         </div>
       </div>
-
-      <br />
 
       <div style={styles.headerButtons}>
         <button

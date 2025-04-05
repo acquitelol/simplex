@@ -1,37 +1,38 @@
 import { useState } from "react";
-import { Footer } from "./components/Footer";
+import { Actions } from "./components/Actions";
 import { Header } from "./components/Header";
 import { Matrix } from "./components/Matrix";
 import { SimplexContext } from "./lib/simpleContext";
 import { useStorageValue } from "./lib/useStorageValue";
+import { Footer } from "./components/Footer";
 
 function App() {
-  const rows = useStorageValue("rows", Number, "4");
-  const cols = useStorageValue("cols", Number, "10");
+  const rows = useStorageValue("rows", "4", Number);
+  const cols = useStorageValue("cols", "10", Number);
 
-  const oldRows = useStorageValue("rows", Number, "4");
-  const oldCols = useStorageValue("cols", Number, "10");
+  const oldRows = useStorageValue("rows", "4", Number);
+  const oldCols = useStorageValue("cols", "10", Number);
 
   const editing = useState(false);
 
   const matrix = useStorageValue<number[][]>(
     "matrix",
-    JSON.parse,
     "[]",
+    JSON.parse,
     JSON.stringify,
   );
 
   const scratchMatrix = useStorageValue<number[][]>(
     "matrix",
-    JSON.parse,
     "[]",
+    JSON.parse,
     JSON.stringify,
   );
 
   const prevStates = useStorageValue<Set<number[][]>>(
     "prevStates",
-    (x) => new Set(JSON.parse(x) as number[][][]),
     "[]",
+    (x) => new Set(JSON.parse(x) as number[][][]),
     (x) => JSON.stringify(Array.from(x)),
   );
 
@@ -48,12 +49,20 @@ function App() {
         prevStates,
       }}
     >
-      <h1>Simplex Solver</h1>
-      <Header />
-      <br />
-      <br />
-      <Matrix />
-      <Footer />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <h1>Simplex Solver</h1>
+        <Header />
+        <Matrix />
+        <Actions />
+        <Footer />
+      </div>
     </SimplexContext.Provider>
   );
 }

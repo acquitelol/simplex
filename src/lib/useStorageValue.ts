@@ -2,8 +2,8 @@ import { useState, useLayoutEffect } from "react";
 
 export const useStorageValue = <T>(
   key: string,
-  cb: (x: string) => T,
   def: string | null = null,
+  cb: (x: string) => T,
   formatter?: (x: T) => string,
 ) => {
   const [value, setValue] = useState<T>(cb(localStorage.getItem(key) ?? def!));

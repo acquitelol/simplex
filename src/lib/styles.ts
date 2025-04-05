@@ -15,7 +15,7 @@ export const { merge, styles } = createStyleSheet({
   matrix: {
     overflow: "auto",
     whiteSpace: "nowrap",
-    width: "fit-content",
+    maxWidth: "80%",
   },
 
   button: {
@@ -33,7 +33,19 @@ export const { merge, styles } = createStyleSheet({
     marginBottom: "0.4em",
   },
 
+  headerFields: {
+    display: "flex",
+    flexDirection: "column",
+    marginBottom: "2em",
+  },
+
   headerButtons: {
     display: "inline-block",
+    marginBottom: "2em",
+  },
+
+  footerButtons: {
+    display: "inline-block",
+    marginBlock: "2em",
   },
 });
