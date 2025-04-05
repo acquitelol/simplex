@@ -88,11 +88,24 @@ export function Header() {
         <button
           style={styles.button}
           onClick={toggleEditing}
+          title={
+            editing
+              ? "Exit editing mode to begin pivoting"
+              : "Enter editing mode to edit the tableau"
+          }
         >{`Edit (${editing ? "✓" : "✗"})`}</button>
-        <button style={styles.button} onClick={changeDimensions}>
+        <button
+          style={styles.button}
+          onClick={changeDimensions}
+          title="Update the tableau with the new rows and columns specified"
+        >
           Update dimensions
         </button>
-        <button style={styles.button} onClick={clear}>
+        <button
+          style={styles.button}
+          onClick={clear}
+          title="Clear the entire tableau, essentially filling it with zeroes"
+        >
           Clear matrix
         </button>
       </div>

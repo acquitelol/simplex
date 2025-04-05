@@ -40,6 +40,7 @@ export function PlainCell({
         { opacity: disabled ? 0.5 : "initial" },
       ])}
       disabled={disabled}
+      title={noop || disabled ? undefined : "Click on this cell to pivot on it"}
       onClick={() => !disabled && !noop && pivotWithState(row, col)}
     >
       {children}

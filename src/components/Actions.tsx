@@ -57,6 +57,7 @@ export function Actions() {
       <button
         onClick={solve}
         disabled={editing}
+        title="Attempt to solve the entire tableau in a single step"
         style={merge((s) => [
           s.button,
           { opacity: !editing ? "initial" : 0.5 },
@@ -67,6 +68,7 @@ export function Actions() {
       <button
         onClick={autoPivotWithState}
         disabled={editing}
+        title="Automatically perform a single iteration of the simplex algorithm"
         style={merge((s) => [
           s.button,
           { opacity: !editing ? "initial" : 0.5 },
@@ -77,6 +79,7 @@ export function Actions() {
       <button
         onClick={unpivot}
         disabled={!prevStates.size || editing}
+        title="Undo a single pivot performed with the simplex algorithm"
         style={merge((s) => [
           s.button,
           { opacity: prevStates.size && !editing ? "initial" : 0.5 },
@@ -87,6 +90,7 @@ export function Actions() {
       <button
         onClick={unsolve}
         disabled={!prevStates.size || editing}
+        title="Completely unsolve the tableau and return to the initial tableau"
         style={merge((s) => [
           s.button,
           { opacity: prevStates.size && !editing ? "initial" : 0.5 },

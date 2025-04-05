@@ -6,7 +6,7 @@
 
 ### ♡ **What features does this have?**
 
-To keep it short - this has everything that [this](https://www.math.cmu.edu/~bkell/pivot.html) doesn't have!
+To keep it short - this has everything that [this](https://www.math.cmu.edu/~bkell/pivot.html) doesn't have (and more)!
 
 - Editable matrix at any time by clicking the "Edit" button
 - Resizable matrix which persists existing values when resized
@@ -16,6 +16,9 @@ To keep it short - this has everything that [this](https://www.math.cmu.edu/~bke
 - Automatic pivoting (a single time, useful for checking working)
 - Solving and unsolving the whole Tableau in a single click
 - Persistent state through `localStorage` (everything is saved)
+
+> [!TIP]
+> You can hover over a button to get more information about it.
 
 ### ♡ **Why does this exist?**
 
