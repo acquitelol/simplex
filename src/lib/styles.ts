@@ -1,6 +1,13 @@
 import { createStyleSheet } from "./stylesheet";
 
 export const { merge, styles } = createStyleSheet({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
   cell: {
     width: "4em",
     display: "inline-block",
@@ -39,13 +46,15 @@ export const { merge, styles } = createStyleSheet({
     marginBottom: "2em",
   },
 
-  headerButtons: {
+  buttons: {
     display: "inline-block",
     marginBottom: "2em",
   },
 
-  footerButtons: {
-    display: "inline-block",
-    marginBlock: "2em",
+  footer: {
+    position: "fixed",
+    bottom: "1em",
+    left: "1em",
+    display: "block",
   },
 });

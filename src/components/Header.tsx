@@ -84,7 +84,7 @@ export function Header() {
         </div>
       </div>
 
-      <div style={styles.headerButtons}>
+      <div style={styles.buttons}>
         <button
           style={styles.button}
           onClick={toggleEditing}

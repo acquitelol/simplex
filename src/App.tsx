@@ -5,6 +5,7 @@ import { Matrix } from "./components/Matrix";
 import { SimplexContext } from "./lib/simplexContext";
 import { useStorageValue } from "./lib/useStorageValue";
 import { Footer } from "./components/Footer";
+import { styles } from "./lib/styles";
 
 function App() {
   const rows = useStorageValue("rows", "4", Number);
@@ -49,14 +50,7 @@ function App() {
         prevStates,
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div style={styles.root}>
         <h1>Simplex Solver</h1>
         <Header />
         <Matrix />

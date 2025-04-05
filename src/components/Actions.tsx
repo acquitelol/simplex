@@ -54,7 +54,7 @@ export function Actions() {
 
   return (
     !editing && (
-      <div style={styles.footerButtons}>
+      <div style={styles.buttons}>
         <button style={styles.button} onClick={solve}>
           Solve
         </button>
