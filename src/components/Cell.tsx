@@ -1,8 +1,51 @@
-import { useContext, useMemo } from "react";
+import { PropsWithChildren, useContext, useMemo } from "react";
 import { SimplexContext } from "../lib/simplexContext";
 import { pivot } from "../lib/simplex";
 import { merge } from "../lib/styles";
 import { deepEqual, setWithDedupe } from "../lib/util";
+
+export function PlainCell({
+  row,
+  col,
+  disabled,
+  noop,
+  children,
+  style,
+}: PropsWithChildren<{
+  row: number;
+  col: number;
+  disabled: boolean;
+  noop: boolean;
+  style?: React.CSSProperties;
+}>) {
+  const {
+    matrix: [matrix, setMatrix],
+    rows: [rows],
+    prevStates: [, setPrevStates],
+  } = useContext(SimplexContext);
+
+  const pivotWithState = (row: number, col: number) => {
+    const newMatrix = pivot(matrix, row, col, rows);
+
+    setPrevStates((prev) => setWithDedupe([...prev, matrix], deepEqual));
+    setMatrix(newMatrix);
+  };
+
+  return (
+    <button
+      key={`cell-${row}-${col}`}
+      style={merge((s) => [
+        s.cell,
+        style ?? {},
+        { opacity: disabled ? 0.5 : "initial" },
+      ])}
+      disabled={disabled}
+      onClick={() => !disabled && !noop && pivotWithState(row, col)}
+    >
+      {children}
+    </button>
+  );
+}
 
 export function Cell({
   row,
@@ -14,19 +57,9 @@ export function Cell({
   value: number;
 }) {
   const {
-    matrix: [matrix, setMatrix],
-    rows: [rows],
     editing: [editing],
     scratchMatrix: [scratchMatrix, setScratchMatrix],
-    prevStates: [, setPrevStates],
   } = useContext(SimplexContext);
-
-  const pivotWithState = (row: number, col: number) => {
-    const newMatrix = pivot(matrix, row, col, rows);
-
-    setPrevStates((prev) => setWithDedupe([...prev, matrix], deepEqual));
-    setMatrix(newMatrix);
-  };
 
   const safeValue = useMemo(() => value || 0, [value]);
 
@@ -52,16 +85,8 @@ export function Cell({
       value={scratchMatrix[row][col] || ""}
     />
   ) : (
-    <button
-      key={`cell-${row}-${col}`}
-      style={merge((s) => [
-        s.cell,
-        { opacity: (value || 0) == 0 ? 0.5 : "initial" },
-      ])}
-      disabled={(value || 0) == 0}
-      onClick={() => pivotWithState(row, col)}
-    >
+    <PlainCell row={row} col={col} disabled={safeValue == 0} noop={false}>
       {Math.floor(safeValue) == safeValue ? safeValue : safeValue.toFixed(3)}
-    </button>
+    </PlainCell>
   );
 }
