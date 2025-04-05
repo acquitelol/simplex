@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { SimplexContext } from "../lib/simpleContext";
+import { SimplexContext } from "../lib/simplexContext";
 import { styles } from "../lib/styles";
 import { deepEqual, generateEmptyMatrix, setWithDedupe } from "../lib/util";
 
