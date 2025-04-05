@@ -51,6 +51,7 @@ $ pnpm dev
 
 ### ♡ **Licensing**
 
+- See the [LICENSE.md](https://github.com/acquitelol/simplex/blob/main/LICENSE.md)
 - Copyright © 2025 Rosie ([acquitelol](https://github.com/acquitelol))
 
 <hr />
