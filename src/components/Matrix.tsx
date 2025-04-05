@@ -19,7 +19,7 @@ export function Matrix() {
 
   return (
     <div style={styles.matrix}>
-      {matrix[0][0].map((_, col) => (
+      {matrix?.[0]?.[0]?.map((_, col) => (
         <PlainCell
           key={`cell-${col}`}
           row={-1}
