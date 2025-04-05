@@ -60,7 +60,7 @@ function App() {
         prevStates,
       }}
     >
-      <h1>Simplex tableau</h1>
+      <h1>Simplex Tableau Solver</h1>
       <Header />
       <br />
       <br />
