@@ -4,10 +4,6 @@
 
 ### ✩ _If you like this project, consider giving it a star!_ ✩
 
-### ♡ **Where do I find this?**
-
-You can find it [here](https://acquitelol.github.io/simplex/).
-
 ### ♡ **What features does this have?**
 
 To keep it short - everything the one above doesn't!
@@ -31,6 +27,36 @@ It's simple and allows for manual pivoting, which is exactly what I needed - exc
 - If I reload the page, all the values I set were also cleared.
 - If I pivot incorrectly, there's no `undo` button.
 - There's no button to automatically pivot once or to start again from the initial tableau.
+
+### ♡ **Where do I find this?**
+
+You can find a deployed version of the project [here](https://acquitelol.github.io/simplex/).
+
+### ♡ **How do I run locally?**
+
+- Clone it to your machine
+
+```console
+$ git clone git@github.com:acquitelol/simplex.git
+```
+
+- Change into the directory
+
+```console
+$ cd simplex
+```
+
+- Install dependencies
+
+```console
+$ pnpm i
+```
+
+- Deploy locally
+
+```console
+$ pnpm dev
+```
 
 ### ♡ **Licensing**
 
