@@ -1,20 +1,9 @@
-import { Context, createContext, useState } from "react";
-import { useStorageValue } from "./lib/useStorageValue";
+import { useState } from "react";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Matrix } from "./components/Matrix";
-import { Footer } from "./components/Footer";
-
-type State<T> = readonly [T, React.Dispatch<React.SetStateAction<T>>];
-export const SimplexContext = createContext({}) as unknown as Context<{
-  rows: State<number>;
-  cols: State<number>;
-  oldRows: State<number>;
-  oldCols: State<number>;
-  editing: State<boolean>;
-  matrix: State<number[][]>;
-  scratchMatrix: State<number[][]>;
-  prevStates: State<Set<number[][]>>;
-}>;
+import { SimplexContext } from "./lib/simpleContext";
+import { useStorageValue } from "./lib/useStorageValue";
 
 function App() {
   const rows = useStorageValue("rows", Number, "4");

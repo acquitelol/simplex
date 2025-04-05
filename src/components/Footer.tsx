@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { SimplexContext } from "../App";
+import { SimplexContext } from "../lib/simpleContext";
 import { autoPivot, isOptimal } from "../lib/simplex";
-import { deepEqual, setWithDedupe } from "../lib/util";
 import { merge, styles } from "../lib/styles";
+import { deepEqual, setWithDedupe } from "../lib/util";
 
 export function Footer() {
   const {

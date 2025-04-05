@@ -1,8 +1,7 @@
 import { useContext } from "react";
-import { SimplexContext } from "../App";
-import { merge } from "../lib/styles";
-import Fraction from "../lib/fraction";
+import { SimplexContext } from "../lib/simpleContext";
 import { pivot } from "../lib/simplex";
+import { merge } from "../lib/styles";
 import { deepEqual, setWithDedupe } from "../lib/util";
 
 export function Cell({
@@ -60,7 +59,7 @@ export function Cell({
       disabled={(value || 0) == 0}
       onClick={() => pivotWithState(row, col)}
     >
-      {new Fraction(value || 0, 1).toDecimal()}
+      {(value || 0).toFixed(3)}
     </button>
   );
 }

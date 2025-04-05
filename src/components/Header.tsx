@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
-import { deepEqual, generateEmptyMatrix, setWithDedupe } from "../lib/util";
-import { SimplexContext } from "../App";
+import { SimplexContext } from "../lib/simpleContext";
 import { styles } from "../lib/styles";
+import { deepEqual, generateEmptyMatrix, setWithDedupe } from "../lib/util";
 
 export function Header() {
   const {
