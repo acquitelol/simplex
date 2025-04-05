@@ -43,12 +43,11 @@ export const { merge, styles } = createStyleSheet({
   headerFields: {
     display: "flex",
     flexDirection: "column",
-    marginBottom: "2em",
   },
 
   buttons: {
     display: "inline-block",
-    marginBottom: "2em",
+    marginBlock: "2em",
   },
 
   footer: {

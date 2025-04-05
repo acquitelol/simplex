@@ -3,13 +3,15 @@ import { useState, useLayoutEffect } from "react";
 export const useStorageValue = <T>(
   key: string,
   def: string | null = null,
-  cb: (x: string) => T,
-  formatter?: (x: T) => string,
+  replacer: (x: string) => T,
+  reviver?: (x: T) => string,
 ) => {
-  const [value, setValue] = useState<T>(cb(localStorage.getItem(key) ?? def!));
+  const [value, setValue] = useState<T>(
+    replacer(localStorage.getItem(key) ?? def!),
+  );
 
   useLayoutEffect(() => {
-    localStorage.setItem(key, (formatter ?? String)(value));
+    localStorage.setItem(key, (reviver ?? String)(value));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
